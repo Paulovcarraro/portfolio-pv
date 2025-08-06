@@ -164,6 +164,72 @@ body {
   gap: 10px;
 }
 
+
+.categoria-titulo {
+  font-size: 1.5rem;
+  margin: 30px 0 15px;
+  color: #fff;
+}
+
+.card {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #555;
+}
+
+.btn-projeto {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #2e2e2e;
+  color: #ccc;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-projeto:hover {
+  background-color: #3a3a3a;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.btn-vermais {
+  margin: 15px auto 40px;
+  display: block;
+  padding: 10px 20px;
+  background-color: #2e2e2e;
+  color: #ccc;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-vermais:hover {
+  background-color: #3a3a3a;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Ocultar extras */
+.cards .extra {
+  display: none;
+}
+.cards.show-all .extra {
+  display: block;
+}
+
+
 @media (min-width: 768px) {
   .nav {
     position: static;

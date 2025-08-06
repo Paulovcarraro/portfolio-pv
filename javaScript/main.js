@@ -13,3 +13,18 @@ document.addEventListener("click", (e) => {
     navMenu.classList.remove("show");
   }
 });
+
+document.querySelectorAll(".btn-vermais").forEach(button => {
+  button.addEventListener("click", () => {
+    const targetId = button.getAttribute("data-target");
+    const cardContainer = document.getElementById(targetId);
+
+    cardContainer.classList.toggle("show-all");
+
+    if (cardContainer.classList.contains("show-all")) {
+      button.textContent = "Ver Menos";
+    } else {
+      button.textContent = "Ver Mais";
+    }
+  });
+});
