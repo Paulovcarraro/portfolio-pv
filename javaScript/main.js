@@ -1,3 +1,5 @@
+// Menu hamburger
+
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
 
@@ -14,7 +16,9 @@ document.addEventListener("click", (e) => {
   }
 });
 
-document.querySelectorAll(".btn-vermais").forEach(button => {
+// Script de funcionamento do botão Ver Mais e Ver Menos
+
+document.querySelectorAll(".btn-vermais").forEach((button) => {
   button.addEventListener("click", () => {
     const targetId = button.getAttribute("data-target");
     const cardContainer = document.getElementById(targetId);
