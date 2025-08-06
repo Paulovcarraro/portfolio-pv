@@ -11,8 +11,16 @@
       media="screen"
       href="./css/styles.css"
     />
+
+    <script
+      src="https://kit.fontawesome.com/e7b202391b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
+    <!-- Header -->
+
     <header class="header">
       <div class="logo">PV</div>
       <nav class="nav" id="nav-menu">
@@ -175,28 +183,57 @@
       </section>
 
       <!-- CONTATO -->
-
       <section id="contato" class="section">
         <h2><i class="fas fa-envelope"></i> Contato</h2>
-        <p>Entre em contato por e-mail ou pelas redes abaixo:</p>
-        <ul class="contato-links">
-          <li>
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:seuemail@gmail.com">seuemail@gmail.com</a>
-          </li>
-          <li>
-            <i class="fab fa-linkedin"></i>
-            <a href="https://linkedin.com/in/seulink" target="_blank"
-              >LinkedIn</a
-            >
-          </li>
-          <li>
+        <p>Entre em contato pelas redes abaixo:</p>
+        <div class="contato-icones">
+          <a
+            href="https://www.linkedin.com/in/paulo-vinicius-carraro-250619348/"
+            target="_blank"
+            class="contato-btn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="https://github.com/Paulovcarraro"
+            target="_blank"
+            class="contato-btn"
+          >
             <i class="fab fa-github"></i>
-            <a href="https://github.com/seuusuario" target="_blank">GitHub</a>
-          </li>
-        </ul>
+          </a>
+          <a href="mailto:paulovcarraro@gmail.com" class="contato-btn">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <button class="contato-btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
       </section>
     </main>
+
+    <!-- POPUP WHATSAPP -->
+    <div class="whatsapp-popup-overlay" id="whatsapp-popup-overlay">
+      <div class="whatsapp-popup">
+        <button class="whatsapp-popup-close" id="whatsapp-popup-close">
+          &times;
+        </button>
+        <div class="whatsapp-popup-header">
+          <div class="whatsapp-popup-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h3 class="whatsapp-popup-title">Atendimento via WhatsApp</h3>
+        </div>
+        <p class="whatsapp-popup-subtitle">
+          Estamos prontos para atender e tirar todas as suas dúvidas!
+        </p>
+        <div class="whatsapp-popup-message">
+          Olá Paulo! Gostaria de saber mais sobre seus serviços.
+        </div>
+        <button class="whatsapp-popup-btn" id="whatsapp-popup-btn">
+          <i class="fab fa-whatsapp"></i> Iniciar conversa
+        </button>
+      </div>
+    </div>
 
     <script src="./javaScript/main.js"></script>
   </body>

@@ -32,3 +32,41 @@ document.querySelectorAll(".btn-vermais").forEach((button) => {
     }
   });
 });
+
+//  POPUP WHATSAPP
+
+// Seleção dos elementos
+const btnWhats = document.querySelector(".btn-whatsapp");
+const popupOverlay = document.getElementById("whatsapp-popup-overlay");
+const popupClose = document.getElementById("whatsapp-popup-close");
+const popupSend = document.getElementById("whatsapp-popup-btn");
+
+// Abrir popup
+btnWhats.addEventListener("click", (e) => {
+  e.preventDefault();
+  popupOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+});
+
+// Fechar popup
+popupClose.addEventListener("click", () => {
+  popupOverlay.classList.remove("active");
+  document.body.style.overflow = "";
+});
+popupOverlay.addEventListener("click", (e) => {
+  if (e.target === popupOverlay) {
+    popupOverlay.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+});
+
+// Enviar mensagem
+popupSend.addEventListener("click", () => {
+  const phoneNumber = "5544999256382"; // seu número
+  const message = encodeURIComponent(
+    "Olá Paulo! Gostaria de saber mais sobre seus serviços."
+  );
+  window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+  popupOverlay.classList.remove("active");
+  document.body.style.overflow = "";
+});
