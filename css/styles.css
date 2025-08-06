@@ -66,6 +66,7 @@ body {
   justify-content: space-between;
   cursor: pointer;
   z-index: 1100;
+  -webkit-tap-highlight-color: transparent; /* Remove efeito em mobile */
 }
 
 .hamburger span {
@@ -316,6 +317,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-tap-highlight-color: transparent; /* Remove efeito em mobile */
 }
 
 .whatsapp-popup-close:hover {
