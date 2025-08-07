@@ -16,6 +16,12 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Serviços
+
+function toggleCard(card) {
+  card.classList.toggle("expanded");
+}
+
 // Script de funcionamento do botão Ver Mais e Ver Menos
 
 document.querySelectorAll(".btn-vermais").forEach((button) => {

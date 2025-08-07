@@ -43,9 +43,8 @@
       <section id="sobre" class="section">
         <h2><i class="fas fa-user"></i> Sobre Mim</h2>
         <p>
-          Sou Paulo Vinícius, estudante de Engenharia de Software com foco em
-          desenvolvimento front-end. Gosto de criar soluções modernas e
-          funcionais com HTML, CSS e JavaScript puro.
+          Sou Paulo Vinícius Carraro, estudante de Engenharia de Software com
+          foco em desenvolvimento front-end ou em áreas administrativas.
         </p>
       </section>
 
@@ -84,7 +83,9 @@
               <i class="fas fa-external-link-alt"></i> Ver Projeto
             </a>
           </div>
+
           <!-- Cards extras -->
+           
           <div class="card extra">
             <h3>Controle Acadêmico</h3>
             <p>Gerenciamento de notas, disciplinas e histórico escolar.</p>
@@ -129,7 +130,9 @@
               <i class="fas fa-external-link-alt"></i> Ver Projeto
             </a>
           </div>
+
           <!-- Cards extras -->
+
           <div class="card extra">
             <h3>Sistema de Delivery</h3>
             <p>Aplicação para gerenciamento de pedidos e entregas.</p>
@@ -154,22 +157,107 @@
 
       <section id="servicos" class="section">
         <h2><i class="fas fa-briefcase"></i> Serviços</h2>
-        <ul class="servicos-lista">
-          <li>
-            <i class="fas fa-globe"></i> Desenvolvimento de sites institucionais
-          </li>
-          <li>
-            <i class="fas fa-laptop-code"></i> Automatização de planilhas com
-            scripts
-          </li>
-          <li>
-            <i class="fas fa-cogs"></i> Manutenção e melhorias em sites
-            existentes
-          </li>
-        </ul>
+
+        <div class="servicos-cards">
+          <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <i class="fas fa-globe"></i> Desenvolvimento de sites
+              institucionais
+            </div>
+
+            <div class="card-content">
+              Criação de sites modernos, responsivos e personalizados para
+              empresas, negócios locais e profissionais liberais.
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <i class="fas fa-laptop-code"></i> Automatização de planilhas
+            </div>
+
+            <div class="card-content">
+              Automatize tarefas repetitivas em planilhas com scripts
+              personalizados (Google Apps Script ou VBA).
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <i class="fas fa-cogs"></i> Manutenção em sites
+            </div>
+
+            <div class="card-content">
+              Correção de erros, ajustes visuais e melhorias de performance em
+              sites já existentes.
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <i class="fas fa-database"></i> Gerenciamento de dados
+            </div>
+            <div class="card-content">
+              Organização e estruturação de dados em planilhas para facilitar
+              análises e relatórios.
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <i class="fas fa-envelope-open-text"></i> Formulários
+              automatizados
+            </div>
+            <div class="card-content">
+              Criação de formulários online com integrações automatizadas, como
+              respostas por e-mail ou registros em planilhas.
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <i class="fas fa-users-cog"></i> Suporte técnico
+            </div>
+            <div class="card-content">
+              Apoio para configuração de e-mails, hospedagem, manutenção de
+              sistemas e mais.
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <i class="fas fa-tasks"></i> Tarefas administrativas
+            </div>
+            <div class="card-content">
+              Auxílio em rotinas administrativas como controle de estoque,
+              agendas e planilhas financeiras.
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <i class="fas fa-file-word"></i> Documentos profissionais
+            </div>
+            <div class="card-content">
+              Criação de templates personalizados para documentos como
+              contratos, orçamentos, currículos, entre outros.
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <i class="fas fa-lightbulb"></i> Consultoria digital
+            </div>
+            <div class="card-content">
+              Ajuda para digitalizar processos manuais, reduzir papelada e
+              aumentar a eficiência da empresa.
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- FORMAÇÃO -->
+
       <section id="formacao" class="section">
         <h2><i class="fas fa-graduation-cap"></i> Formação</h2>
 

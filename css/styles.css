@@ -130,6 +130,53 @@ body {
   color: #cccccc;
 }
 
+/* Serviços */
+
+.servicos-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover {
+  background-color: #292929;
+}
+
+.card-header {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.card-content {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #cccccc;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.card.expanded .card-content {
+  max-height: 300px;
+}
+
+/* Projetos */
+
 .cards {
   display: grid;
   grid-template-columns: 1fr;
