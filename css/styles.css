@@ -136,12 +136,13 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  align-items: start; /* 🔥 Evita que os cards fiquem com a mesma altura */
 }
 
 .card {
   background-color: #1e1e1e;
   border-radius: 12px;
-  padding: 20px;
+  padding: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -159,20 +160,23 @@ body {
   align-items: center;
   gap: 10px;
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 1rem; /* 🔽 Reduzi um pouco o tamanho */
+  word-break: break-word; /* ✅ Evita quebra ruim em textos longos */
 }
 
 .card-content {
   margin-top: 10px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #cccccc;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
 }
 
+/* Quando estiver expandido */
+
 .card.expanded .card-content {
-  max-height: 300px;
+  max-height: 200px;
 }
 
 /* Projetos */
@@ -467,5 +471,21 @@ body {
 
   .hamburger {
     display: none;
+  }
+}
+
+/*  RESPONSIVO para celulares */
+
+@media (max-width: 768px) {
+  .servicos-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card-header {
+    font-size: 0.95rem;
+  }
+
+  .card-content {
+    font-size: 0.85rem;
   }
 }
