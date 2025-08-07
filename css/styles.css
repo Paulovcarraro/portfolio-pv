@@ -28,35 +28,53 @@ body {
   color: #fff;
 }
 
+/* ===== MENU (Mobile) ===== */
 .nav {
-  position: absolute;
-  top: 80px;
-  right: 40px;
-  background: #1c1c1c;
-  border-radius: 12px;
-  padding: 20px;
-  display: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #121212;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: height 0.4s ease;
+  z-index: 999;
 }
 
 .nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav.show {
+  height: 40%;
+}
+
+.nav.show ul {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .nav a {
   text-decoration: none;
   color: #ccc;
-  font-size: 1rem;
+  font-size: 1.2rem;
   transition: 0.3s;
 }
 
 .nav a:hover {
   color: #fff;
 }
+
+/* ===== Menu  HAMBURGER ===== */
 
 .hamburger {
   width: 30px;
@@ -66,7 +84,7 @@ body {
   justify-content: space-between;
   cursor: pointer;
   z-index: 1100;
-  -webkit-tap-highlight-color: transparent; /* Remove efeito em mobile */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger span {
@@ -89,12 +107,7 @@ body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.nav.show {
-  display: block;
-}
-
-/* Seção de Projetos */
-
+/* ===== SEÇÕES ===== */
 .section {
   padding: 100px 20px 60px;
   max-width: 900px;
@@ -146,47 +159,10 @@ body {
   text-decoration: none;
 }
 
-.servicos-lista {
-  list-style: none;
-  padding-left: 0;
-}
-
-.servicos-lista li {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.contato-links {
-  list-style: none;
-  padding: 0;
-}
-
-.contato-links li {
-  margin: 8px 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .categoria-titulo {
   font-size: 1.5rem;
   margin: 30px 0 15px;
   color: #fff;
-}
-
-.card {
-  background-color: #1a1a1a;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #2a2a2a;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #555;
 }
 
 .btn-projeto {
@@ -227,7 +203,6 @@ body {
 }
 
 /* Ocultar extras */
-
 .cards .extra {
   display: none;
 }
@@ -235,8 +210,7 @@ body {
   display: block;
 }
 
-/* Contatos */
-
+/* ===== CONTATOS ===== */
 .contato-icones {
   display: flex;
   gap: 15px;
@@ -264,8 +238,7 @@ body {
   transform: scale(1.05);
 }
 
-/* === POPUP WHATSAPP  === */
-
+/* ===== POPUP WHATSAPP ===== */
 .whatsapp-popup-overlay {
   position: fixed;
   top: 0;
@@ -317,7 +290,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  -webkit-tap-highlight-color: transparent; /* Remove efeito em mobile */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .whatsapp-popup-close:hover {
@@ -388,18 +361,21 @@ body {
   transform: translateY(-2px);
 }
 
+/* ===== DESKTOP ===== */
 @media (min-width: 768px) {
   .nav {
     position: static;
-    display: block;
+    height: auto;
+    width: auto;
     background: none;
-    padding: 0;
-    box-shadow: none;
+    overflow: visible;
   }
 
   .nav ul {
     flex-direction: row;
     gap: 30px;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .hamburger {
