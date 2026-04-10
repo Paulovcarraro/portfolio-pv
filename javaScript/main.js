@@ -1,96 +1,120 @@
-// Menu hamburger
-
+// --- Menu hamburger ---
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("show");
-});
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("show");
+  });
 
-// Fecha o menu se clicar fora dele
-document.addEventListener("click", (e) => {
-  if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("show");
-  }
-});
+  document.addEventListener("click", (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("show");
+    }
+  });
+}
 
-// Serviços
-
+// --- Serviços ---
 function toggleCard(card) {
   card.classList.toggle("expanded");
 }
 
-// Script de funcionamento do botão Ver Mais e Ver Menos
-
+// --- Botão Ver Mais e Ver Menos (Projetos) ---
 document.querySelectorAll(".btn-vermais").forEach((button) => {
   button.addEventListener("click", () => {
     const targetId = button.getAttribute("data-target");
     const cardContainer = document.getElementById(targetId);
 
-    cardContainer.classList.toggle("show-all");
-
-    if (cardContainer.classList.contains("show-all")) {
-      button.textContent = "Ver Menos";
-    } else {
-      button.textContent = "Ver Mais";
+    if (cardContainer) {
+      cardContainer.classList.toggle("show-all");
+      button.textContent = cardContainer.classList.contains("show-all")
+        ? "Ver Menos"
+        : "Ver Mais";
     }
   });
 });
 
-//  POPUP WHATSAPP
-
-// Seleção dos elementos
+// --- POPUP WHATSAPP ---
 const btnWhats = document.querySelector(".btn-whatsapp");
 const popupOverlay = document.getElementById("whatsapp-popup-overlay");
 const popupClose = document.getElementById("whatsapp-popup-close");
 const popupSend = document.getElementById("whatsapp-popup-btn");
 
-// Abrir popup
-btnWhats.addEventListener("click", (e) => {
-  e.preventDefault();
-  popupOverlay.classList.add("active");
-  document.body.style.overflow = "hidden";
-});
-
-// Fechar popup
-popupClose.addEventListener("click", () => {
-  popupOverlay.classList.remove("active");
-  document.body.style.overflow = "";
-});
-popupOverlay.addEventListener("click", (e) => {
-  if (e.target === popupOverlay) {
-    popupOverlay.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-});
-
-// Enviar mensagem
-popupSend.addEventListener("click", () => {
-  const phoneNumber = "5544999256382"; // seu número
-  const message = encodeURIComponent(
-    "Olá Paulo! Gostaria de saber mais sobre seus serviços."
-  );
-  window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
-  popupOverlay.classList.remove("active");
-  document.body.style.overflow = "";
-});
-
-// Script para rolagem personalizada ao clicar no botão de contato
-document
-  .getElementById("btn-contato-hero")
-  .addEventListener("click", function (e) {
-    e.preventDefault(); // Cancela o pulo seco do link
-
-    const targetSection = document.getElementById("contato");
-    const headerHeight = document.querySelector(".header").offsetHeight;
-
-    // Calcula a posição da seção menos a altura do header fixo
-    const targetPosition = targetSection.offsetTop - headerHeight;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth",
-    });
+if (btnWhats && popupOverlay) {
+  btnWhats.addEventListener("click", (e) => {
+    e.preventDefault();
+    popupOverlay.classList.add("active");
+    document.body.style.overflow = "hidden";
   });
+
+  if (popupClose) {
+    popupClose.addEventListener("click", () => {
+      popupOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  }
+
+  popupOverlay.addEventListener("click", (e) => {
+    if (e.target === popupOverlay) {
+      popupOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
+
+  if (popupSend) {
+    popupSend.addEventListener("click", () => {
+      const phoneNumber = "5544999256382";
+      const message = encodeURIComponent(
+        "Olá Paulo! Gostaria de saber mais sobre seus serviços."
+      );
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+      popupOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  }
+}
+
+// --- Rolagem personalizada (Botão Contato Hero) ---
+const btnContatoHero = document.getElementById("btn-contato-hero");
+if (btnContatoHero) {
+  btnContatoHero.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetSection = document.getElementById("contato");
+    const header = document.querySelector(".header");
+
+    if (targetSection && header) {
+      const headerHeight = header.offsetHeight;
+      const targetPosition = targetSection.offsetTop - headerHeight;
+      window.scrollTo({ top: targetPosition, behavior: "smooth" });
+    }
+  });
+}
+
+// --- Animação da Timeline ---
+// Usando IntersectionObserver para ser mais profissional que o window.onload
+const initTimeline = () => {
+  const timeline = document.querySelector(".timeline");
+  const sectionFormacao = document.querySelector("#formacao");
+
+  if (timeline && sectionFormacao) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            timeline.classList.add("animate");
+            console.log("Timeline animada com sucesso!");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(sectionFormacao);
+  }
+};
+
+// Garante que o script rode apenas após o HTML carregar
+document.addEventListener("DOMContentLoaded", initTimeline);
