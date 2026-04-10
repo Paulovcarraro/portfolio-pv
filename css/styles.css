@@ -409,7 +409,7 @@ html {
   border-radius: 6px;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: var(--transition); 
+  transition: var(--transition);
 }
 
 .btn-vermais:hover {
@@ -443,38 +443,80 @@ html {
   }
 }
 
-/* Formação */
-
-.formacao-lista {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
+/* Container da Linha do Tempo */
+.timeline {
+  position: relative;
+  border-left: 2px solid #333; /* Linha vertical cinza escuro */
+  margin: 30px 0 45px 15px;
+  padding-left: 30px;
 }
 
-.formacao-lista li {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #ccc;
-  font-size: 1rem;
+.timeline-item {
+  position: relative;
+  margin-bottom: 35px;
 }
 
+/* Bolinha da Timeline em Cinza */
+.timeline-dot {
+  position: absolute;
+  left: -41px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  background-color: #111; /* Cor de fundo do site */
+  border: 3px solid #666; /* Borda cinza metálico */
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-dot {
+  border-color: #aaa; /* Brilha ao passar o mouse */
+  transform: scale(1.2);
+}
+
+.timeline-status {
+  font-size: 0.8rem;
+  color: #888; /* Cinza médio */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timeline-content h3 {
+  margin: 5px 0;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+}
+
+.timeline-content .instituicao {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Botões - Mantendo suas cores e estilo */
 .botoes-curriculo {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .btn-curriculo {
-  display: inline-block;
-  padding: 10px 18px;
-  background-color: #2e2e2e;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: #2e2e2e; /* Sua cor cinza original */
   color: #ccc;
   border-radius: 6px;
   text-decoration: none;
   font-size: 0.95rem;
   transition: all 0.3s ease;
+}
+
+.btn-curriculo:hover {
+  background-color: #3a3a3a;
+  color: #fff;
+  transform: translateY(-3px) scale(1.05);
 }
 
 .btn-curriculo:hover {
