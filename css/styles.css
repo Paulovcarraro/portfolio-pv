@@ -456,24 +456,52 @@ html {
   margin-bottom: 35px;
 }
 
-/* Bolinha da Timeline em Cinza */
+/* --- Estilo da Bolinha (Timeline Dot) --- */
 .timeline-dot {
   position: absolute;
-  left: -41px;
+  left: -42px; /* Ajuste fino para alinhar com a linha */
   top: 5px;
-  width: 18px;
-  height: 18px;
+  width: 22px; /* Aumentei levemente para caber o ícone */
+  height: 22px;
   background-color: #111; /* Cor de fundo do site */
   border: 3px solid #666; /* Borda cinza metálico */
   border-radius: 50%;
   transition: var(--transition);
+
+  /* Essencial para centralizar o ícone */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Esconde o ícone por padrão (caso você coloque o HTML em todos) */
+.timeline-dot i {
+  display: none;
+  font-size: 0.7rem; /* Tamanho do ícone */
+  color: #ccc; /* Cor cinza clara do ícone */
+}
+
+/* --- Estilo para os Itens CONCLUÍDOS --- */
+.timeline-item.completed .timeline-dot i {
+  display: block; /* Mostra o ícone apenas nos concluídos */
+}
+
+.timeline-item.completed .timeline-dot {
+  background-color: #222; /* Fundo levemente mais claro nos concluídos */
+  border-color: #888; /* Borda mais clara nos concluídos */
+}
+
+/* Hover effect */
 .timeline-item:hover .timeline-dot {
   border-color: #aaa; /* Brilha ao passar o mouse */
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
+.timeline-item.completed:hover .timeline-dot i {
+  color: #fff; /* Ícone brilha no hover */
+}
+
+/* --- Restante do estilo --- */
 .timeline-status {
   font-size: 0.8rem;
   color: #888; /* Cinza médio */
@@ -493,7 +521,7 @@ html {
   font-size: 0.95rem;
 }
 
-/* Botões - Mantendo suas cores e estilo */
+/* Botões - Mantendo suas cores e estilo originais */
 .botoes-curriculo {
   display: flex;
   gap: 12px;
@@ -517,12 +545,6 @@ html {
   background-color: #3a3a3a;
   color: #fff;
   transform: translateY(-3px) scale(1.05);
-}
-
-.btn-curriculo:hover {
-  background-color: #3a3a3a;
-  color: #fff;
-  transform: scale(1.05);
 }
 
 /* ===== CONTATOS ===== */
