@@ -16,6 +16,24 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Script para rolagem personalizada ao clicar no botão de contato
+document
+  .getElementById("btn-contato-hero")
+  .addEventListener("click", function (e) {
+    e.preventDefault(); // Cancela o pulo seco do link
+
+    const targetSection = document.getElementById("contato");
+    const headerHeight = document.querySelector(".header").offsetHeight;
+
+    // Calcula a posição da seção menos a altura do header fixo
+    const targetPosition = targetSection.offsetTop - headerHeight;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  });
+
 // Serviços
 
 function toggleCard(card) {
