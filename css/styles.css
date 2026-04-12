@@ -424,7 +424,7 @@ html {
 .timeline {
   position: relative;
   margin: 40px 0 45px 15px; /* Aumentei levemente a margem esquerda */
-  padding-left: 45px; 
+  padding-left: 45px;
   min-height: 10px;
 }
 
@@ -448,7 +448,7 @@ html {
 /* ITENS - Entrada suave */
 .timeline-item {
   position: relative;
-  margin-bottom: 45px; 
+  margin-bottom: 45px;
   opacity: 0;
   transform: translateX(-10px);
   transition: all 0.6s ease-out;
@@ -467,7 +467,7 @@ html {
   top: 4px;
   width: 22px;
   height: 22px;
-  background-color: #0b0b0b; 
+  background-color: #0b0b0b;
   border: 2px solid #666;
   border-radius: 50%;
   display: flex;
@@ -549,31 +549,131 @@ html {
 }
 
 /* ===== CONTATOS ===== */
+:root {
+  --color-linkedin: #0077b5;
+  --color-github: #2ea44f; /* Um verde GitHub mais vibrante */
+  --color-email: #ea4335;
+  --color-whatsapp: #25d366;
+}
+
 .contato-icones {
   display: flex;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 25px;
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 1.8rem;
 }
 
 .contato-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #2e2e2e;
-  color: #f0f0f0;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05); /* Fundo sutil */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 1.6rem;
+  color: #fff;
   text-decoration: none;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: visible; /* Para permitir que o brilho saia do botão */
+  backdrop-filter: blur(5px);
+}
+
+/* Camada de Brilho (Glow) que aparece no Hover */
+.contato-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s ease;
+  filter: blur(15px);
 }
 
 .contato-btn:hover {
-  background-color: #4a4a4a;
-  transform: scale(1.05);
+  transform: translateY(-10px) scale(1.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+.contato-btn:hover::before {
+  opacity: 0.6;
+}
+
+.contato-btn i {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilização Individual com Gradientes e Glow */
+
+/* LinkedIn */
+.btn-linkedin:hover {
+  background: var(--color-linkedin);
+}
+.btn-linkedin::before {
+  background: var(--color-linkedin);
+}
+
+/* GitHub */
+.btn-github:hover {
+  background: #333;
+}
+.btn-github::before {
+  background: #333;
+}
+
+/* Email */
+.btn-email:hover {
+  background: var(--color-email);
+}
+.btn-email::before {
+  background: var(--color-email);
+}
+
+/* WhatsApp */
+.btn-whatsapp:hover {
+  background: var(--color-whatsapp);
+}
+.btn-whatsapp::before {
+  background: var(--color-whatsapp);
+}
+
+/* Animação de Flutuação Suave nos ícones */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.contato-icones a {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Delay para cada ícone não subir ao mesmo tempo */
+.contato-icones a:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.contato-icones a:nth-child(3) {
+  animation-delay: 1s;
+}
+.contato-icones a:nth-child(4) {
+  animation-delay: 1.5s;
 }
 
 /* ===== POPUP WHATSAPP ===== */
