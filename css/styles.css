@@ -57,12 +57,17 @@ body {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -1px;
-  background: linear-gradient(to right, var(--text-primary), var(--brand-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
 /* ===== NAVIGATION ===== */
@@ -748,6 +753,18 @@ html {
   gap: 40px;
 }
 
+.footer-brand .logo {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.footer-brand .logo-img {
+  height: 120px; 
+  width: auto;
+  display: block;
+}
+
 .footer-brand p {
   color: var(--text-secondary);
   font-size: 0.9rem;
@@ -956,6 +973,9 @@ html {
 /*  RESPONSIVO para celulares */
 
 @media (max-width: 768px) {
+  .logo-img {
+    height: 50px;
+  }
   .nav {
     position: fixed;
     top: 0;
@@ -1010,6 +1030,10 @@ html {
   .footer-container {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .footer-brand .logo {
+    justify-content: center; /* Centraliza a logo no celular */
   }
 
   .footer-brand p {
