@@ -9,7 +9,7 @@
   --surface-hover: #1a1a1a;
   --text-primary: #ffffff;
   --text-secondary: #a1a1a1;
-   --text-tertiary: #555555;
+  --text-tertiary: #555555;
   --border-subtle: rgba(255, 255, 255, 0.05);
 
   /* Animações Cinza Metálico */
@@ -30,7 +30,10 @@
 }
 
 body {
-  font-family: "Inter", -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif;
   background-color: var(--surface-dark);
   color: var(--text-primary);
   line-height: 1.6;
@@ -520,33 +523,86 @@ html {
   font-size: 0.95rem;
 }
 
-/* Botões - Suas cores preservadas */
-.botoes-curriculo {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+/* Divisor para curriculo */
+
+.divisor-recursos {
+  margin: 60px 0 30px 0;
+  padding-left: 0;
 }
 
-.btn-curriculo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  background-color: #2e2e2e;
-  color: #ccc;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
+.divisor-tag {
+  font-size: 0.7rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.btn-curriculo:hover {
-  background-color: #3a3a3a;
+.divisor-titulo {
+  font-size: 1.5rem;
   color: #fff;
-  transform: translateY(-3px);
-  border-color: #555;
+  margin-bottom: 10px;
+}
+
+.divisor-subtitulo {
+  font-size: 0.9rem;
+  color: #888;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* Botões - Suas cores preservadas */
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.resume-card {
+  background: #141414;
+  border: 1px solid #222;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.resume-card:hover {
+  border-color: #444;
+  background: #1a1a1a;
+}
+
+.resume-icon {
+  font-size: 1.5rem;
+  color: #888;
+}
+
+.resume-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.resume-info p {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 5px 0 15px;
+}
+
+.resume-link {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.resume-link.highlight {
+  color: #00d2ff;
 }
 
 /* ===== CONTATOS ===== */
