@@ -1,19 +1,69 @@
 <!doctype html>
 <html>
-  <head>
+  <<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Paulo Vinícius | Desenvolvedor</title>
+
+    <title>Carraro Solutions</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Carraro Solutions - Criação de sites, automação e soluções digitais para empresas em Londrina, Maringá, Jaguapitã, Miraselva, Guaraci, Centenário do Sul, Porecatu e região."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Paulo Vinícius Carraro" />
+
+    <!-- GEO (opcional) -->
+    <meta name="geo.region" content="BR-PR" />
+    <meta name="geo.placename" content="Londrina" />
+    <meta name="geo.position" content="-23.3045;-51.1696" />
+    <meta name="ICBM" content="-23.3045, -51.1696" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Carraro Solutions | Desenvolvimento de Sites e Soluções Digitais"
+    />
+    <meta
+      property="og:description"
+      content="Sites modernos e soluções digitais para empresas da região de Londrina, Maringá e cidades próximas."
+    />
+    <meta
+      property="og:image"
+      content="https://www.carrarosolutions.com.br/img/CarraroSolutions_logo.png"
+    />
+    <meta property="og:url" content="https://www.carrarosolutions.com.br" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Carraro Solutions" />
+    <meta
+      name="twitter:description"
+      content="Criação de sites e soluções digitais no Paraná."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://www.carrarosolutions.com.br/img/CarraroSolutions_logo.png"
+    />
+
+    <!-- FAVICON (logo no navegador) -->
+    <link rel="icon" href="./img/CarraroSolutions_logo.png" type="image/png" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/styles.css" />
 
+    <!-- FontAwesome -->
     <script
       src="https://kit.fontawesome.com/e7b202391b.js"
       crossorigin="anonymous"
     ></script>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-48G1H157RY"
@@ -24,8 +74,39 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-48G1H157RY");
+    </script>
+
+    <!-- JSON-LD (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Carraro Solutions",
+        "url": "https://www.carrarosolutions.com.br",
+        "areaServed": [
+          { "@type": "City", "name": "Londrina" },
+          { "@type": "City", "name": "Maringá" },
+          { "@type": "City", "name": "Jaguapitã" },
+          { "@type": "City", "name": "Miraselva" },
+          { "@type": "City", "name": "Guaraci" }
+          { "@type": "City", "name": "Porecatu" }
+          { "@type": "City", "name": "Prado Ferreira" }
+          { "@type": "City", "name": "Centenario do Sul" }
+          { "@type": "City", "name": "Rolandia" }
+
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Londrina",
+          "addressRegion": "PR",
+          "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/paulovcarraro",
+          "https://github.com/Paulovcarraro"
+        ]
+      }
     </script>
   </head>
 
