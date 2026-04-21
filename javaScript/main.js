@@ -17,8 +17,13 @@ if (hamburger && navMenu) {
 }
 
 // --- Serviços ---
-function toggleCard(card) {
-  card.classList.toggle("expanded");
+function toggleCard(element) {
+  const allCards = document.querySelectorAll(".card");
+  allCards.forEach((card) => {
+    if (card !== element) card.classList.remove("expanded");
+  });
+
+  element.classList.toggle("expanded");
 }
 
 // --- Botão Ver Mais e Ver Menos (Projetos) ---
@@ -67,7 +72,7 @@ if (btnWhats && popupOverlay) {
     popupSend.addEventListener("click", () => {
       const phoneNumber = "5544999256382";
       const message = encodeURIComponent(
-        "Olá Paulo! Gostaria de saber mais sobre seus serviços."
+        "Olá Paulo! Gostaria de saber mais sobre seus serviços.",
       );
       window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
       popupOverlay.classList.remove("active");
@@ -109,7 +114,7 @@ const initTimeline = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     observer.observe(sectionFormacao);

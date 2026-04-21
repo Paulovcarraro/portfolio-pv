@@ -244,49 +244,79 @@ html {
 
 .servicos-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  align-items: start; /* 🔥 Evita que os cards fiquem com a mesma altura */
+  padding: 20px 0;
 }
 
 .card {
-  background-color: #1e1e1e;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-subtle);
   border-radius: 12px;
-  padding: 16px;
+  padding: 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
+  transition: var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
-  background-color: #292929;
+  background-color: var(--surface-hover);
+  border-color: var(--brand-blue);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .card-header {
-  font-weight: bold;
+  display: flex;
+  justify-content: space-between; /* Alinha ícone e seta */
+  align-items: center;
+  color: var(--text-primary);
+}
+
+.header-main {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #ffffff;
-  font-size: 1rem; /* 🔽 Reduzi um pouco o tamanho */
-  word-break: break-word; /* ✅ Evita quebra ruim em textos longos */
+  gap: 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.header-main i {
+  color: var(--text-primary); /* Ícone principal em destaque */
+  font-size: 1.2rem;
+}
+
+.toggle-icon {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  transition: transform 0.3s ease;
+}
+
+.card.expanded .toggle-icon {
+  transform: rotate(180deg);
+  color: var(--brand-blue);
 }
 
 .card-content {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #cccccc;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
-/* Quando estiver expandido */
-
 .card.expanded .card-content {
-  max-height: 200px;
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.content-inner {
+  padding-top: 15px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 15px;
 }
 
 /* Seção de Projetos Refatorada */
@@ -760,7 +790,7 @@ html {
 }
 
 .footer-brand .logo-img {
-  height: 120px; 
+  height: 120px;
   width: auto;
   display: block;
 }
