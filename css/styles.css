@@ -427,6 +427,31 @@ html {
   margin-top: 40px;
 }
 
+/* Container das tags */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* Estilo das tags de tecnologia */
+.tech-tag {
+  font-size: 0.7rem;
+  background-color: rgba(255, 255, 255, 0.05); /* Um fundo sutil */
+  color: var(--text-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  font-weight: 500;
+}
+
+/* Ajuste no parágrafo para não empurrar tudo */
+.card-moderno p {
+  margin-bottom: 15px; /* Diminuído para dar espaço às tags */
+  flex-grow: 1;
+}
+
 .btn-vermais {
   background: transparent;
   border: 1px solid var(--border-subtle);
