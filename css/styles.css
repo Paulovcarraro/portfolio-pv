@@ -144,21 +144,70 @@ button {
   height: 66px;
 }
 
-.logo-img {
-  height: 46px;
+/* ---------- Logo em CSS ---------- */
+.logo-css {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.logo-mark {
+  height: 34px;
   width: auto;
-  object-fit: contain;
-  transition:
-    transform 0.4s var(--ease),
-    height 0.4s var(--ease);
+  transition: transform 0.5s var(--ease), height 0.4s var(--ease);
 }
 
-.header.scrolled .logo-img {
-  height: 40px;
+.mark-top {
+  fill: #e8e8e8;
+  transition: fill 0.4s var(--ease);
 }
 
-.logo:hover .logo-img {
-  transform: scale(1.05);
+.mark-bottom {
+  fill: #5c5c5c;
+  transition: fill 0.4s var(--ease);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-text strong {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+
+.logo-text small {
+  margin-top: 0.3rem;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  color: var(--silver-dark);
+}
+
+/* Animações */
+.logo-css:hover .logo-mark {
+  transform: translateX(-3px) scale(1.06);
+}
+
+.logo-css:hover .mark-top {
+  fill: #ffffff;
+}
+
+.logo-css:hover .mark-bottom {
+  fill: #808080;
+}
+
+.header.scrolled .logo-mark {
+  height: 30px;
+}
+
+.header.scrolled .logo-text strong {
+  font-size: 1.2rem;
 }
 
 .nav ul {
