@@ -600,6 +600,52 @@
         </div>
       </section>
 
+      <section id="orcamento" class="section">
+        <h2>
+          <i class="fas fa-file-signature"></i>
+          Solicitar Orçamento
+        </h2>
+
+        <p>
+          Preencha os dados abaixo e entrarei em contato o mais rápido possível.
+        </p>
+
+        <form id="orcamentoForm" class="orcamento-form">
+          <select name="servico" required>
+            <option value="">Selecione um serviço</option>
+            <option>Desenvolvimento de Sites</option>
+            <option>Automatização de Planilhas</option>
+            <option>Manutenção de Sites</option>
+            <option>Gerenciamento de Dados</option>
+            <option>Formulários Automatizados</option>
+            <option>Suporte Técnico</option>
+            <option>Tarefas Administrativas</option>
+            <option>Documentos Profissionais</option>
+            <option>Consultoria Digital</option>
+            <option>Emissão de Notas</option>
+          </select>
+
+          <input type="text" name="nome" placeholder="Seu nome" required />
+
+          <input type="tel" name="telefone" placeholder="WhatsApp" required />
+
+          <input type="email" name="email" placeholder="Seu e-mail" required />
+
+          <textarea
+            name="descricao"
+            rows="5"
+            placeholder="Descreva brevemente o que você precisa (opcional)"
+          ></textarea>
+
+          <label class="checkbox-lgpd">
+            <input type="checkbox" required />
+            Confirmo que tenho interesse em receber um orçamento.
+          </label>
+
+          <button type="submit" class="btn-cta">Solicitar Orçamento</button>
+        </form>
+      </section>
+
       <!-- CONTATOS -->
 
       <section id="contato" class="section">
